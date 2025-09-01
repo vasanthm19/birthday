@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      color: white;
+    }
+    .login-box {
+      margin-top: 150px;
+      padding: 20px;
+      background: rgba(0,0,0,0.3);
+      display: inline-block;
+      border-radius: 15px;
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: #ff1493;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #wishes {
+      display: none;
+      margin-top: 50px;
+    }
+    h1 {
+      font-size: 50px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px yellow; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Box -->
+  <div class="login-box" id="loginBox">
+    <h2>Enter Your Details ❤️</h2>
+    <input type="text" id="name" placeholder="Enter Name"><br>
+    <input type="date" id="dob"><br>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Wishes Page -->
+  <div id="wishes">
+    <h1>🎉 Happy Birthday My Love ❤️ 🎂</h1>
+    <p>Wishing you all the happiness in the world!  
+       You are the most special person in my life 💕</p>
+    <p>May your day be filled with love, laughter, and surprises 🌹✨</p>
+    <img src="IMG_20241111_061823.jpg" width="300px"><br><br>
+    <audio controls autoplay>
+      <source src="happy.mp3.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function login() {
+      let name = document.getElementById("name").value.trim();
+      let dob = document.getElementById("dob").value;
+
+      // Change these values to your girlfriend's details
+      let correctName = "S.Chithra";   // Example
+      let correctDob = "2004-10-02"; // Example YYYY-MM-DD
+
+      if(name.toLowerCase() === correctName.toLowerCase() && dob === correctDob) {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("wishes").style.display = "block";
+      } else {
+        alert("Oops! Wrong details ❌. Try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
+  
